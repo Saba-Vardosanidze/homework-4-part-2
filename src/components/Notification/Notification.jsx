@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { NotificationContext } from "../../context/NotificationContext";
 
 const Notification = () => {
-  const { message, type } = useContext(NotificationContext);
+  const { message, type, setType, setMessage } =
+    useContext(NotificationContext);
   if (!message) return null;
 
   const bgColor =
@@ -26,14 +27,28 @@ const Notification = () => {
       ? "./images/svg/error.svg"
       : "bg-gray-500";
 
+  const xIcon =
+    type === "success"
+      ? "./images/svg/GreenX.svg"
+      : type === "error"
+      ? "./images/svg/redX.svg"
+      : "bg-gray-500";
+
+  function closeToast() {
+    setMessage(null);
+    setType(null);
+  }
   return (
     <div
-      className={`${bgColor} text-[#28292A] max-w-[350px] w-[100%] min-h-[56px] rounded fixed top-4 right-4 shadow-md border ${border} flex rounded-[16px] items-center font-semibold`}
+      className={`${bgColor} text-[#28292A] max-w-[350px] w-[100%] min-h-[56px] rounded fixed top-4 right-4 shadow-md border ${border} flex rounded-[16px] items-center font-semibold justify-between`}
     >
       <div className="flex gap-[12px] ml-[16px] max-[209px]">
         <img src={img} alt="notificationIcon" />
         {message}
       </div>
+      <button onClick={closeToast} className="mr-[16px] cursor-pointer">
+        <img src={xIcon} alt="closeButton" />
+      </button>
     </div>
   );
 };
