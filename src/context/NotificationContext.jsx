@@ -13,7 +13,7 @@ export const NotificationProvider = ({ children }) => {
     setTimeout(() => {
       setMessage(null);
       setType(null);
-    }, 3000);
+    }, 2000);
   };
 
   return (

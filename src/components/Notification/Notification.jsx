@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { NotificationContext } from "../../context/NotificationContext";
+import { motion } from "framer-motion";
 
 const Notification = () => {
   const { message, type, setType, setMessage } =
@@ -39,8 +40,15 @@ const Notification = () => {
     setType(null);
   }
   return (
-    <div
-      className={`${bgColor} text-[#28292A] max-w-[350px] w-[100%] min-h-[56px] rounded fixed top-4 right-4 shadow-md border ${border} flex rounded-[16px] items-center font-semibold justify-between`}
+    <motion.div
+      className={`${bgColor} text-[#28292A] max-w-[350px] w-[100%] min-h-[56px] rounded fixed top-10 right-10 shadow-md border ${border} flex rounded-[16px] items-center font-semibold justify-between`}
+      animate={{
+        x: [200, 10],
+      }}
+      transition={{
+        duration: 0.2,
+        ease: "easeInOut",
+      }}
     >
       <div className="flex gap-[12px] ml-[16px] max-[209px]">
         <img src={img} alt="notificationIcon" />
@@ -49,7 +57,7 @@ const Notification = () => {
       <button onClick={closeToast} className="mr-[16px] cursor-pointer">
         <img src={xIcon} alt="closeButton" />
       </button>
-    </div>
+    </motion.div>
   );
 };
 
