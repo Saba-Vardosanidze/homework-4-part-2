@@ -15,7 +15,6 @@ export const NotificationProvider = ({ children }) => {
       setType(null);
     }, 2000);
   };
-
   return (
     <NotificationContext.Provider
       value={{ message, type, showNotification, setMessage, setType }}
