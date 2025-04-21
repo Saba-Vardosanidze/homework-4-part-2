@@ -1,0 +1,8 @@
+{
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  "ignore": ["src/context/NotificationContext.jsx", "src/global.css"]
+}
