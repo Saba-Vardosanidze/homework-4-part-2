@@ -1,6 +1,6 @@
 import React from "react";
 import Notification from "./components/Notification/Notification";
-import TriggerButtons from "./components/Triggerbuttons/TriggerButtons";
+import TriggerButtons from "./components/TriggerButtons/TriggerButtons";
 
 const App = () => {
   return (
