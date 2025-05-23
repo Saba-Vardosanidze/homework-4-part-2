@@ -1,10 +1,9 @@
-import { useContext } from "react";
-import { NotificationContext } from "../../context/NotificationContext";
-import { motion } from "framer-motion";
+import {useContext} from "react";
+import {NotificationContext} from "../../context/NotificationContext";
+import {motion} from "framer-motion";
 
 const Notification = () => {
-  const { message, type, setType, setMessage } =
-    useContext(NotificationContext);
+  const {message, type, setType, setMessage} = useContext(NotificationContext);
   if (!message) return null;
 
   const bgColor =

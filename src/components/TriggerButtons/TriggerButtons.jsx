@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { NotificationContext } from "../../context/NotificationContext";
+import {useContext} from "react";
+import {NotificationContext} from "../../context/NotificationContext";
 
 const TriggerButtons = () => {
-  const { showNotification } = useContext(NotificationContext);
+  const {showNotification} = useContext(NotificationContext);
 
   return (
     <div className="flex justify-between m-auto mt-[154px] max-w-[200px]">
